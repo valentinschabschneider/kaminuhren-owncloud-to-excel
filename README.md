@@ -32,3 +32,9 @@ The inner folder stucture contains at least three Files.
 	Kaminuhr-0173.png
 	...
 ```
+
+## Build Executeable
+
+`pipenv install --dev`
+
+`pipenv run python .\setup.py py2exe`

@@ -9,6 +9,7 @@ openpyxl = "*"
 
 [dev-packages]
 black = "*"
+py2exe = "*"
 
 [requires]
 python_version = "3.9"
