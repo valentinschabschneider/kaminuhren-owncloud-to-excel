@@ -55,9 +55,7 @@ if not path:
 root_directory = Path(path)
 
 # only subfolders with naming scheme
-clock_directories = [
-    path for path in root_directory.glob("Kaminuhr-*") if path.is_dir()
-]
+clock_directories = [path for path in root_directory.glob("*-*") if path.is_dir()]
 
 if not clock_directories:
     logging.warning('No matching folders in "%s". Exiting.', root_directory)
@@ -79,7 +77,10 @@ for row_index, c_dir in enumerate(clock_directories, 1):
         logging.warning('"%s" does not exist!', description_file_path)
         description = ""
     else:
-        description = open(description_file_path, encoding="utf-8").read()
+        try:
+            description = open(description_file_path, encoding="utf-8").read()
+        except UnicodeDecodeError:
+            description = open(description_file_path, encoding="unicode_escape").read()
 
     description_cell = worksheet.cell(row_index, 2)
     description_cell.alignment = Alignment(wrapText=True)

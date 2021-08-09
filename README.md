@@ -4,7 +4,7 @@ Converts an ownCloud file / folder structure to an excel file.
 
 ## Folder structure
 
-Folder naming scheme is "Kaminuhr" and a four digit number: `Kaminuhr-XXXX`
+Folder naming scheme is "Clock-Type" and a four digit number: `Kaminuhr-XXXX`
 
 ### Example
 
